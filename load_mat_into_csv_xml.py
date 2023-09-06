@@ -35,7 +35,7 @@ import pandas as pd
 import argparse
 
 
-GT_FILES_PATHS_LIST = ["NIR/ObjectGT", "VIS_Onshore/ObjectGT", "VIS_Onboard/ObjectGT"]
+GT_FILES_PATHS_LIST = ["VIS_Onshore/ObjectGT", "VIS_Onboard/ObjectGT"]
 
 class Frame:
     """
@@ -512,7 +512,7 @@ def generate_split_dataset_csv_xml(path, frames_tuple, paths_list, integer_bb=Fa
     
     for key in object_gt_files_dict.keys():
         file_name = object_gt_files_dict[key]
-        
+
         gt = loadmat(file_name)
         
         # get the number of frames

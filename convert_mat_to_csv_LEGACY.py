@@ -3,7 +3,6 @@
 """
 Created on Mon Sep 24 11:23:05 2018
 
-@author: Tilemachos Bontzorlos
 
 This is a sample code to experiment and transform the Singapore Maritime 
 Dataset (SMD) .mat object detection files into a CSV format for further 
@@ -25,9 +24,10 @@ from os import listdir
 from os.path import isfile, join
 
 # set the paths to the ground truth .mat files
-PATHS_TO_GT_FILES = ["NIR/ObjectGT", "VIS_Onshore/ObjectGT", "VIS_Onboard/ObjectGT"]
+ROOT_PATH = "/Users/zanchitta/Developer/datasets/smd_plus/"
+PATHS_TO_GT_FILES = [join(ROOT_PATH,"VIS_Onshore/ObjectGT"),join(ROOT_PATH, "VIS_Onboard/ObjectGT")]
 # set the path and filesnames where the txt files will be saved in CSV format
-PATHS_TO_SAVE_CSV_FILES = ['objects_nir.txt', 'objects_onshore.txt', 'objects_onboard.txt']
+PATHS_TO_SAVE_CSV_FILES = ['objects_onshore.txt', 'objects_onboard.txt']
 
 class Frame:
     """
